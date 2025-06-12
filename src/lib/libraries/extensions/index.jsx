@@ -47,6 +47,15 @@ import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
 export default [
+    // Adding Kinect extension
+    {
+        name: 'Kinect',
+        extensionId: 'kinect2',
+        iconURL: penIconURL, // Use pen icon for now
+        insetIconURL: penInsetIconURL, // Use pen icon for now
+        description: 'Motion sensing with Kinect sensor.',
+        featured: true
+},
     {
         name: (
             <FormattedMessage
