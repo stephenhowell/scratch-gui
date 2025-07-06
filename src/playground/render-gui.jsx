@@ -75,9 +75,10 @@ export default appTarget => {
             /> :
             <WrappedGui
                 canEditTitle
-                backpackVisible
-                showComingSoon
-                backpackHost={backpackHost}
+                // backpackVisible
+                // showComingSoon
+                // backpackHost={backpackHost}                
+                load_project_from_file={'./assets/pose-tracking-demo.sb3'}  // path is relative to where app runs
                 canSave={false}
                 onClickLogo={onClickLogo}
             />,

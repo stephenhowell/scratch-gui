@@ -1,3 +1,11 @@
+/**
+ * The project loading logic in this component's componentDidMount method
+ * is based on the approach used in the open-scratch/easy-scratch3 project.
+ *
+ * Original project: https://github.com/open-scratch/easy-scratch3
+ * Licensed under the Apache License 2.0.
+ */
+
 import bindAll from 'lodash.bindall';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -27,7 +35,8 @@ const vmManagerHOC = function (WrappedComponent) {
                 'loadProject'
             ]);
         }
-        componentDidMount () {
+        // Converting to async to handle the asynchronous nature of loading the project file.
+        async componentDidMount () {            
             if (!this.props.vm.initialized) {
                 this.audioEngine = new AudioEngine();
                 this.props.vm.attachAudioEngine(this.audioEngine);
@@ -37,6 +46,24 @@ const vmManagerHOC = function (WrappedComponent) {
             }
             if (!this.props.isPlayerOnly && !this.props.isStarted) {
                 this.props.vm.start();
+            }            
+            
+            if (this.props.load_project_from_file) {
+                const filePath = this.props.load_project_from_file;
+                
+                // Ask the main process to read the file via the preload bridge
+                const data = await window.electronAPI.getFileAsBuffer(filePath);
+
+                if (data) {
+                    // Load the project data into the VM
+                    this.props.vm.loadProject(data)
+                        .then(() => {
+                            console.log('✅ Default project loaded successfully via vm-manager-hoc.');
+                        })
+                        .catch(e => {
+                            console.error('❌ Error loading project inside vm-manager-hoc:', e);
+                        });
+                }
             }
         }
         componentDidUpdate (prevProps) {

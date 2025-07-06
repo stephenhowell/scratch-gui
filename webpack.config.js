@@ -44,6 +44,7 @@ const baseConfig = new ScratchWebpackConfigBuilder(
             }
         }
     })
+    .addExternals(['electron']) 
     .addModuleRule({
         test: /\.(svg|png|wav|mp3|gif|jpg)$/,
         resourceQuery: /^$/, // reject any query string
