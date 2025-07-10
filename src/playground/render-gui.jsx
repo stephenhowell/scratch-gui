@@ -82,5 +82,5 @@ export default appTarget => {
                 canSave={false}
                 onClickLogo={onClickLogo}
             />,
-        appTarget);
+        appTarget);        
 };

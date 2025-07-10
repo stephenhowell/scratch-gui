@@ -7,6 +7,9 @@ import musicInsetIconURL from './music/music-small.svg';
 import penIconURL from './pen/pen.png';
 import penInsetIconURL from './pen/pen-small.svg';
 
+import bodyblocksIconURL from './bodyblocks/background.png';
+import bodyblocksInsetIconURL from './bodyblocks/inset-small.svg';
+
 import videoSensingIconURL from './videoSensing/video-sensing.png';
 import videoSensingInsetIconURL from './videoSensing/video-sensing-small.svg';
 
@@ -47,15 +50,15 @@ import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
 export default [
-    // Adding Kinect extension
+    // Adding bodyblocks extension
     {
-        name: 'Kinect',
-        extensionId: 'kinect2',
-        iconURL: penIconURL, // Use pen icon for now
-        insetIconURL: penInsetIconURL, // Use pen icon for now
-        description: 'Motion sensing with Kinect sensor.',
+        name: 'Body Blocks',
+        extensionId: 'bodyblocks',
+        iconURL: bodyblocksIconURL,
+        insetIconURL: bodyblocksInsetIconURL,
+        description: 'Control sprites with body movements.\nRequires Android phone app.',
         featured: true
-},
+    },
     {
         name: (
             <FormattedMessage

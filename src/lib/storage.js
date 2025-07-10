@@ -1,4 +1,7 @@
-import {ScratchStorage} from 'scratch-storage';
+// import {ScratchStorage} from 'scratch-storage';
+// Attempting to fix loading library sprites bug, fix reported https://github.com/scratchfoundation/scratch-gui/issues/9817
+import ScratchStorage from 'scratch-storage';
+
 
 import defaultProject from './default-project';
 
