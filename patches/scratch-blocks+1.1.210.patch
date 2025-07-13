@@ -1,0 +1,13 @@
+diff --git a/node_modules/scratch-blocks/core/flyout_vertical.js b/node_modules/scratch-blocks/core/flyout_vertical.js
+index 8b6a451..30510a3 100644
+--- a/node_modules/scratch-blocks/core/flyout_vertical.js
++++ b/node_modules/scratch-blocks/core/flyout_vertical.js
+@@ -79,7 +79,7 @@ Blockly.VerticalFlyout.prototype.autoClose = false;
+  * The width of the flyout, if not otherwise specified.
+  * @type {number}
+  */
+-Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 250;
++Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 450;
+ 
+ /**
+  * Size of a checkbox next to a variable reporter.
